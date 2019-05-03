@@ -23,7 +23,8 @@ def identifica_eleitor(eleitores):
             print('Nome inválido!')
             print('Eleitores que ainda náo votaram:', ', '.join(eleitores))
 
-
+votosDudu = 0
+votosFelipe = 0
 def registra_votacao(eleitor_atual, candidatos):
     '''Exibe candidatos para o eleitor atual e registra voto.'''
     if len(candidatos) == 0:
@@ -35,15 +36,23 @@ def registra_votacao(eleitor_atual, candidatos):
             votacao_candidato[nome] += 1
             print('### VOTAÇÃO ENCERRADA PARA %s ###' % eleitor_atual)
             return True
+
         else:
             print()
             print('Nome inválido!!!! Digite o nome de um candidato.')
             print()
 
 
-def imprime_votacao():
+def imprime_votacao(votacao_candidato):
     for k, v in votacao_candidato.items():
         print('Candidato: %s  Votos: %s' % (k, v))
+    print(votacao_candidato)
+    votosDudu = votacao_candidato['Dudu']
+    votosFelipe = votacao_candidato['Felipe']
+    if votosDudu > votosFelipe:
+        print('Dudu ganhou')
+    elif votosDudu < votosFelipe:
+        print('felipe ganhou')
 
 
 candidatos = set(('Dudu', 'Felipe'))
@@ -55,4 +64,4 @@ while eleitor_atual is not None:
     if eleitor_atual:
         registra_votacao(eleitor_atual, candidatos)
 
-imprime_votacao()
+imprime_votacao(votacao_candidato)
