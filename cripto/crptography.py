@@ -1,6 +1,5 @@
-print('deseja continuar')
-escolha = input()
-while escolha != 'não':
+
+def DecifrarECriptografar():
     senha1 = 'dudu4'
     print('digite  a senha')
     digitado1 = input()
@@ -42,7 +41,12 @@ while escolha != 'não':
             #decifrada = decifrada + cifra[posicao_letra]
             #ind += 2
         print(decifrada)
+
     else:
           exit('vocẽ errou' )
-          #print('deseja continuar')
-          #escolha = input()
+    print('deseja continuar')
+    pergunta = input()
+    if pergunta == 's' or 'sim':
+        DecifrarECriptografar()
+DecifrarECriptografar()
+
